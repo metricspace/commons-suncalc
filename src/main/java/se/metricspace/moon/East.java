@@ -21,10 +21,10 @@ public class East {
             for(int hour = 0; hour < 24; hour ++ ) {
                 for(int q = 0; q < 4 ; q++ ) {
                     MoonPosition moon = compute(date);
-                    if(null!=moon && moon.getAltitude()>0.1 && moon.getAzimuth()>54.9 && moon.getAzimuth()<125.1) {
-                        System.out.println(dateFormat.format(date)+", Height: "+numberFormat.format(moon.getAltitude())+", Direction: "+numberFormat.format(moon.getAzimuth()));
+                    if(null!=moon && moon.getAltitude()>0.49 && moon.getAzimuth()>54.9 && moon.getAzimuth()<125.1) {
+                        System.out.println("<tr><td>"+dateFormat.format(date)+"</td><td>"+numberFormat.format(moon.getAltitude())+"&deg;</td><td>"+numberFormat.format(moon.getAzimuth())+"&deg;</td></tr>");
                     }
-                    date = new java.util.Date(date.getTime()+900000L); // 15 minutes forward ...
+                    date = new java.util.Date(date.getTime()+1200000L); // 20 minutes forward ...
                 }
             }
         }
